@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/qtypestack_synccopies/db" VERSION="20230310" COMMENT="XMLDB file for Moodle local/qtypestack_synccopies"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_qtypestack_synccopies" COMMENT="Default comment for local_qtypestack_synccopies, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="variantquestionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="seedid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="questionid" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id"/>
+        <KEY NAME="variantquestionid" TYPE="foreign" FIELDS="variantquestionid" REFTABLE="question" REFFIELDS="id"/>
+        <KEY NAME="seedid" TYPE="foreign" FIELDS="seedid" REFTABLE="qtype_stack_deployed_seeds" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
